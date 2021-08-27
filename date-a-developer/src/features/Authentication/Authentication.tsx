@@ -1,62 +1,20 @@
-import authConfig from './AuthConfig.js';
-import { PublicClientApplication } from '@azure/msal-browser';
-import { Component } from 'react';
+import { useAppSelector, useAuthenticationDispatch } from '../../app/hooks';
+import { loginAsync, logoutAsync, selectIsAuthenticated, selectUser } from './AuthenticationSlice';
 
-export class Authentication extends Component {
-    publicClientApplication: PublicClientApplication;
-    state: any;
+export function Authentication() {
+    const isAuthenticated = useAppSelector(selectIsAuthenticated);
 
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            error: null,
-            isAuthenticated: false,
-            user: {}
-        }
-        this.login = this.login.bind(this);
-        this.publicClientApplication = new PublicClientApplication({
-            auth: {
-                clientId: authConfig.appId,
-                redirectUri: authConfig.redirectUri,
-                authority: authConfig.authority
-            },
-            cache: {
-                cacheLocation: 'sessionStorage',
-                storeAuthStateInCookie: true
+    const dispatch = useAuthenticationDispatch();
+
+    return (
+        <div>
+            {
+                isAuthenticated
+                    ? <div>
+                        <div onClick={() => dispatch(logoutAsync())}>Logout</div>
+                    </div>
+                    : <div onClick={() => dispatch(loginAsync())}>Login</div>
             }
-        });
-    }
-
-    async login() {
-        try {
-            await this.publicClientApplication.loginPopup(
-                {
-                    scopes: authConfig.scopes,
-                    prompt: "select_account"
-                }
-            )
-        } catch(err) {
-            this.setState({
-                isAuthenticated: false,
-                user: {},
-                error: err
-            });
-        }
-    }
-
-    logout() {
-        this.publicClientApplication.logoutPopup();
-    }
-
-    render() {
-        return (
-            <div>
-                {
-                    this.state.isAuthenticated
-                        ? <p> Successful logged in </p>
-                        : <button onClick={() => this.login()}>Login</button>
-                }
-            </div>
-        )
-    }
+        </div>
+    )
 }

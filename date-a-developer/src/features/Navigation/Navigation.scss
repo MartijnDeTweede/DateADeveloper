@@ -1,15 +1,24 @@
 @import '../../crosscutting-styles/text.scss';
 @import '../../crosscutting-styles/backgrounds.scss';
+@import "../../crosscutting-styles/fontsizes";
 
-.Navbar {
+.Navbar{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
+    justify-content: space-between;
     background-color: $background-color--default;
 }
 
+.Navbar-itemset {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .Navbar-item {
+    font-size: $fontsize-navigation;
     color: $textColor--default;
     margin: 0.5rem 2rem 0.5rem 0;
 }
