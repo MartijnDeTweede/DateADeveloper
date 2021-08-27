@@ -17,8 +17,9 @@
     align-items: flex-end;
 }
 
-.Navbar-item {
+.Navbar-item, .Navbar-item:active, .Navbar-item:visited {
     font-size: $fontsize-navigation;
     color: $textColor--default;
     margin: 0.5rem 2rem 0.5rem 0;
+    text-decoration: none;
 }
