@@ -1,0 +1,26 @@
+@import "../../crosscutting-styles/fontsizes";
+@import "../../crosscutting-styles/text.scss";
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.profile-name {
+    font-size: $fontsize-text;
+    color: $textColor--default;
+}
+
+.profile-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.profile-image--placeholder {
+    background-color: $textColor--default;
+    color: $textColor--default;;
+}
+
