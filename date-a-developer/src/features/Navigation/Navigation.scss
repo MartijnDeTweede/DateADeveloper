@@ -1,0 +1,15 @@
+@import '../../crosscutting-styles/text.scss';
+@import '../../crosscutting-styles/backgrounds.scss';
+
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    background-color: $background-color--default;
+}
+
+.Navbar-item {
+    color: $textColor--default;
+    margin: 0.5rem 2rem 0.5rem 0;
+}

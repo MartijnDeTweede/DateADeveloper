@@ -1,9 +1,8 @@
-import './App.css';
 import { Navigation } from './features/Navigation/Navigation';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navigation></Navigation>
     </div>
   );
