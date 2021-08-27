@@ -1,0 +1,13 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    border: 1px rgb(112, 76, 182) solid;
+    background-color: rgb(112, 76, 182);
+}
+
+.Navbar-item {
+    color: white;
+    margin: 0.5rem 2rem 0.5rem 0;
+}
