@@ -1,3 +1,5 @@
+import { Authentication } from "../Authentication/Authentication";
+
 import './Navigation.scss';
 
 
@@ -8,6 +10,8 @@ export function Navigation() {
             <div className="Navbar-item">Profile</div>
             <div className="Navbar-item">Assignments</div>
             <div className="Navbar-item">Match</div>
+            <div className="Navbar-item"><Authentication /></div>
+            
         </div>
     )
 }

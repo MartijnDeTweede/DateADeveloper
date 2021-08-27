@@ -1,5 +1,4 @@
 import { Navigation } from './features/Navigation/Navigation';
-
 function App() {
   return (
     <div>
