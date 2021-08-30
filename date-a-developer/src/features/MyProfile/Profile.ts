@@ -10,6 +10,7 @@ export enum ProfileType {
 
 export interface ProfileState {
     screenName: string;
+    userId: string;
     pictureUri?: boolean;
     description: string;
     type: ProfileType;

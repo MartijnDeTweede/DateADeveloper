@@ -6,7 +6,8 @@ const initialState: ProfileState = {
     screenName: '',
     pictureUri: undefined,
     description: '',
-    type: ProfileType.NotSelected
+    type: ProfileType.NotSelected,
+    userId: '',
 };
 
 var baseUrl = 'http://localhost:7071/api';
@@ -22,6 +23,7 @@ export const getMyProfile = createAsyncThunk(
                 .then(response => response.json());
             var profileSate: ProfileState = {
                 description: result.description,
+                userId: result.userId,
                 screenName: result.screenName,
                 type: result.type
             }
