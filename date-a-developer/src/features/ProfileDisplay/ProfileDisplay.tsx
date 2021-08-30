@@ -1,8 +1,8 @@
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../Authentication/AuthenticationSlice';
-import "./Profile.scss"
+import "./ProfileDisplay.scss"
 
-export function Profile() {
+export function ProfileDisplay() {
     const user = useAppSelector(selectUser);
 
     return(

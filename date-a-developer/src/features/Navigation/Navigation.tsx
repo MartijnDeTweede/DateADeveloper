@@ -1,5 +1,5 @@
 import { Authentication } from "../Authentication/Authentication";
-import { Profile } from "../Profile/Profile";
+import { ProfileDisplay } from "../ProfileDisplay/ProfileDisplay";
 
 import {
     BrowserRouter as Router,
@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import './Navigation.scss';
-import { ProfileContainer } from "../ProfileContainer/ProfileContainer";
+import { MyProfile } from "../MyProfile/MyProfile";
 import { HomeContainer } from "../HomeContainer/HomeContainer";
 
 export function Navigation() {
@@ -25,13 +25,13 @@ export function Navigation() {
                 </div>
                 <div className="Navbar-itemset">
                     <div className="Navbar-item"><Authentication /></div>
-                    <div className="Navbar-item"><Profile /></div>
+                    <div className="Navbar-item"><ProfileDisplay /></div>
                 </div>
             </div>
 
             <Switch>
                 <Route path="/profile">
-                    <ProfileContainer />
+                    <MyProfile />
                 </Route>
                 <Route path="/">
                     <HomeContainer />
